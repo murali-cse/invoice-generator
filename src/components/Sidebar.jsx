@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useLocation } from "react-router-dom";
 
 const Sidebar = () => {
@@ -6,9 +6,9 @@ const Sidebar = () => {
   const selected = { backgroundColor: "#F9BF14", color: "black" };
   const selectedIconColor = { color: "black" };
   const unselectedIconColor = { color: "white" };
+
   var routes = [];
 
-  <i class="bx bx-refresh"></i>;
   routes = [
     {
       icon: "bx bx-user",
@@ -76,9 +76,6 @@ const Sidebar = () => {
       selected: false,
     },
   ];
-  useEffect(() => {
-    console.log(location.pathname);
-  }, []);
 
   return (
     <>
@@ -88,7 +85,7 @@ const Sidebar = () => {
             <ul className="metismenu list-unstyled" id="side-menu">
               {routes.map((v) => {
                 return (
-                  <li style={v.selected ? selected : null}>
+                  <li style={v.selected ? selected : null} key={v.text}>
                     <a href="/" className="waves-effect">
                       <i
                         className={v.icon}
