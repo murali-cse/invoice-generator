@@ -38,9 +38,11 @@ const AdminActions = () => {
         break;
       case "3":
         setButtonText("Add Mix Design");
+        setButtonLink("/addmixdesign");
         break;
       case "4":
         setButtonText("Add Suppliers");
+        setButtonLink("/addsuppliers");
         break;
       default:
         setButtonText("Add Customer");
@@ -194,7 +196,6 @@ const AdminActions = () => {
             </div>
           </div>
         </div>
-
         <Footer />
       </div>
     </>

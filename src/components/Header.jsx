@@ -1,4 +1,5 @@
 import React from "react";
+import qrmcLogo from "../assets/vectors/qrmc_logo.svg";
 
 const Header = () => {
   return (
@@ -7,12 +8,12 @@ const Header = () => {
         <div className="navbar-header">
           <div className="d-flex">
             <div className="navbar-brand-box">
-              <a href="#" className="logo logo-dark">
+              <a href="/" className="logo logo-dark">
                 <span className="logo-sm">
-                  <img src="assets/images/logo.svg" alt="" height="22" />
+                  <img src={qrmcLogo} alt="" height="50" />
                 </span>
                 <span className="logo-lg">
-                  <img src="assets/images/logo-dark.png" alt="" height="17" />
+                  <img src={qrmcLogo} alt="" height="50" />
                 </span>
               </a>
 

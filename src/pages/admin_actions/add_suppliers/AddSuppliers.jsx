@@ -2,28 +2,29 @@ import { TabContext, TabList, TabPanel } from "@mui/lab";
 import { Box, Container, Tab, Typography } from "@mui/material";
 import React, { useState } from "react";
 import Header from "../../../components/Header";
-import "./add_customer_style.css";
+import "../add_employee/add_customer_style.css";
 import Basic from "./Basic";
-import Experience from "./Experience";
-import FamilyDetails from "./FamilyDetails";
-import PersonalInfo from "./PersonalInfo";
-import Qualification from "./Qualification";
+import Contact from "./Contact";
 
-const AddEmployee = () => {
+const AddSuppliers = () => {
+  const TAB1 = "Basic Details";
+  const TAB2 = "Contact Details";
+  const TAB3 = "Bank Details";
+  const TAB4 = "Statutory Details";
+
   const [value, setValue] = useState("1");
 
-  document.title = "Add Employee | QRMC";
+  document.title = "Add Suppliers | QRMC";
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
   return (
     <>
       <Header />
       <Container sx={{ marginTop: "8rem" }}>
         <Typography variant="h5" marginBottom={"1rem"}>
-          Add Employee
+          Add Suppliers
         </Typography>
         <Box sx={{ width: "100%", typography: "body1" }}>
           <TabContext value={value}>
@@ -34,22 +35,20 @@ const AddEmployee = () => {
                 centered={true}
                 scrollButtons={"auto"}
               >
-                <Tab label="Basic" value="1" />
-                <Tab label="Personal Info" value="2" />
-                <Tab label="Family Details" value="3" />
-                <Tab label="Qualification" value="4" />
-                <Tab label="Experience" value="5" />
+                <Tab label={TAB1} value="1" />
+                <Tab label={TAB2} value="2" />
+                <Tab label={TAB3} value="3" />
+                <Tab label={TAB4} value="4" />
               </TabList>
             </Box>
             <TabPanel value="1">
-              <Basic callback={handleChange} />
+              <Basic />
             </TabPanel>
             <TabPanel value="2">
-              <PersonalInfo callback={handleChange} />
+              <Contact />
             </TabPanel>
-            <TabPanel value="3">{<FamilyDetails />}</TabPanel>
-            <TabPanel value="4">{<Qualification />}</TabPanel>
-            <TabPanel value="5">{<Experience />}</TabPanel>
+            <TabPanel value="3">item 3</TabPanel>
+            <TabPanel value="4">item 4</TabPanel>
           </TabContext>
         </Box>
       </Container>
@@ -57,4 +56,4 @@ const AddEmployee = () => {
   );
 };
 
-export default AddEmployee;
+export default AddSuppliers;
