@@ -3,8 +3,10 @@ import { Box, Container, Tab, Typography } from "@mui/material";
 import React, { useState } from "react";
 import Header from "../../../components/Header";
 import "../add_employee/add_customer_style.css";
+import BankDetails from "./BankDetails";
 import Basic from "./Basic";
 import Contact from "./Contact";
+import Statutory from "./Statutory";
 
 const AddSuppliers = () => {
   const TAB1 = "Basic Details";
@@ -47,8 +49,8 @@ const AddSuppliers = () => {
             <TabPanel value="2">
               <Contact />
             </TabPanel>
-            <TabPanel value="3">item 3</TabPanel>
-            <TabPanel value="4">item 4</TabPanel>
+            <TabPanel value="3">{<BankDetails />}</TabPanel>
+            <TabPanel value="4">{<Statutory />}</TabPanel>
           </TabContext>
         </Box>
       </Container>
