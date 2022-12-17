@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Sidebar = () => {
   const location = useLocation();
@@ -14,11 +14,13 @@ const Sidebar = () => {
       icon: "bx bx-user",
       text: "Admin Actions",
       selected: location.pathname === "/" ? true : false,
+      path: "/",
     },
     {
       icon: "bx bx-line-chart",
       text: "Marketing Enquiry",
-      selected: false,
+      selected: location.pathname === "/marketenq" ? true : false,
+      path: "/marketenq",
     },
     {
       icon: "bx bx-book",
@@ -86,7 +88,7 @@ const Sidebar = () => {
               {routes.map((v) => {
                 return (
                   <li style={v.selected ? selected : null} key={v.text}>
-                    <a href="/" className="waves-effect">
+                    <Link to={v.path ? v.path : "/"} className="waves-effect">
                       <i
                         className={v.icon}
                         style={
@@ -100,7 +102,7 @@ const Sidebar = () => {
                       >
                         {v.text}
                       </span>
-                    </a>
+                    </Link>
                   </li>
                 );
               })}
