@@ -1,7 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import backgroundImage from "../assets/images/bg.svg";
-import logo from "../assets/vectors/logo.svg";
 
 const Login = () => {
   return (
@@ -11,7 +9,6 @@ const Login = () => {
         style={{
           padding: "10%",
           backgroundColor: "#EFF0ED",
-          backgroundImage: "url(" + backgroundImage + ")",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
         }}
@@ -56,7 +53,7 @@ const Login = () => {
                       <div class="avatar-md profile-user-wid mb-4">
                         <span class="avatar-title rounded-circle bg-light">
                           <img
-                            src={logo}
+                            src={""}
                             alt=""
                             class="rounded-circle"
                             height="40"

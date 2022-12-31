@@ -1,5 +1,5 @@
 {
-  "name": "qrmc_admin",
+  "name": "invoice_admin",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

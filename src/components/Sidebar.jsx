@@ -7,81 +7,38 @@ const Sidebar = () => {
   const selectedIconColor = { color: "black" };
   const unselectedIconColor = { color: "white" };
 
-  var routes = [];
+  const pathname = location.pathname;
 
-  routes = [
+  var routes = [
     {
-      icon: "bx bx-user",
-      text: "Admin Actions",
+      icon: "bx bx-grid-alt",
+      text: "Dashboard",
       selected: location.pathname === "/" ? true : false,
       path: "/",
     },
     {
-      icon: "bx bx-line-chart",
-      text: "Marketing Enquiry",
-      selected: location.pathname === "/marketenq" ? true : false,
-      path: "/marketenq",
-    },
-    {
-      icon: "bx bx-book",
-      text: "Order Book",
-      selected: false,
-    },
-    {
-      icon: "bx bx-wrench",
-      text: "Quality Control",
-      selected: false,
-    },
-    {
-      icon: "bx bx-cog",
-      text: "Operations",
-      selected: false,
-    },
-    {
-      icon: "bx bx-rupee",
-      text: "Purchase",
-      selected: false,
-    },
-    {
-      icon: "bx bxs-factory",
-      text: "Production",
-      selected: false,
-    },
-    {
-      icon: "bx bxs-truck",
-      text: "Fleet Management",
-      selected: false,
-    },
-    {
-      icon: "bx bx-store",
-      text: "Stores",
-      selected: false,
-    },
-    {
-      icon: "bx bxs-user-detail",
-      text: "Accounts",
-      selected: false,
-    },
-    {
       icon: "bx bx-group",
-      text: "Human Resources",
-      selected: false,
+      text: "Customers",
+      selected: location.pathname === "/customers" ? true : false,
+      path: "/customers",
     },
     {
-      icon: "bx bx-calculator",
-      text: "Rate Calc",
-      selected: false,
+      icon: "bx bx-file-blank",
+      text: "Invoices",
+      selected: pathname.includes("/invoice") ? true : false,
+      path: "/invoices",
     },
     {
-      icon: "bx bxs-report",
-      text: "MIS Reports",
-      selected: false,
+      icon: "bx bx-receipt",
+      text: "Templates",
+      selected: location.pathname === "/templates" ? true : false,
+      path: "/templates",
     },
   ];
 
   return (
     <>
-      <div className="vertical-menu" style={{ backgroundColor: "#6C6E69" }}>
+      <div className="vertical-menu" style={{ backgroundColor: "#2A3043" }}>
         <div data-simplebar className="h-100">
           <div id="sidebar-menu">
             <ul className="metismenu list-unstyled" id="side-menu">
