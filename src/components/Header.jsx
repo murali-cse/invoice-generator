@@ -2,6 +2,15 @@ import React from "react";
 import qrmcLogo from "../assets/vectors/qrmc_logo.svg";
 
 const Header = () => {
+  const handleSidebar = () => {
+    var body = document.getElementsByTagName("body")[0];
+    if (body.getAttribute("class") == "sidebar-enable") {
+      body.setAttribute("class", "");
+    } else {
+      body.setAttribute("class", "sidebar-enable");
+    }
+  };
+
   return (
     <>
       <header id="page-topbar">
@@ -17,7 +26,7 @@ const Header = () => {
                 </span>
               </a>
 
-              <a href="#" className="logo logo-light">
+              <a href="/" className="logo logo-light">
                 <span className="logo-sm">
                   <img src="assets/images/logo-light.svg" alt="" height="22" />
                 </span>
@@ -26,34 +35,17 @@ const Header = () => {
                 </span>
               </a>
             </div>
+            <button
+              type="button"
+              class="btn btn-sm px-3 font-size-16 header-item waves-effect"
+              id="vertical-menu-btn"
+              onClick={handleSidebar}
+            >
+              <i class="fa fa-fw fa-bars"></i>
+            </button>
           </div>
 
           <div className="d-flex">
-            <div className="dropdown d-inline-block d-lg-none ms-2">
-              <div
-                className="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
-                aria-labelledby="page-header-search-dropdown"
-              >
-                <form className="p-3">
-                  <div className="form-group m-0">
-                    <div className="input-group">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Search ..."
-                        aria-label="Recipient's username"
-                      />
-                      <div className="input-group-append">
-                        <button className="btn btn-primary" type="submit">
-                          <i className="mdi mdi-magnify"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-
             <div className="dropdown d-inline-block">
               <button
                 type="button"

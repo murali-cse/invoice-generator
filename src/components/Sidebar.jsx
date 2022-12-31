@@ -13,13 +13,13 @@ const Sidebar = () => {
     {
       icon: "bx bx-grid-alt",
       text: "Dashboard",
-      selected: location.pathname === "/" ? true : false,
+      selected: pathname === "/" ? true : false,
       path: "/",
     },
     {
       icon: "bx bx-group",
       text: "Customers",
-      selected: location.pathname === "/customers" ? true : false,
+      selected: pathname === "/customers" ? true : false,
       path: "/customers",
     },
     {
@@ -31,7 +31,7 @@ const Sidebar = () => {
     {
       icon: "bx bx-receipt",
       text: "Templates",
-      selected: location.pathname === "/templates" ? true : false,
+      selected: pathname === "/templates" ? true : false,
       path: "/templates",
     },
   ];
@@ -45,7 +45,14 @@ const Sidebar = () => {
               {routes.map((v) => {
                 return (
                   <li style={v.selected ? selected : null} key={v.text}>
-                    <Link to={v.path ? v.path : "/"} className="waves-effect">
+                    <Link
+                      to={v.path ? v.path : "/"}
+                      className="waves-effect"
+                      onClick={() => {
+                        var body = document.getElementsByTagName("body")[0];
+                        body.setAttribute("class", "");
+                      }}
+                    >
                       <i
                         className={v.icon}
                         style={

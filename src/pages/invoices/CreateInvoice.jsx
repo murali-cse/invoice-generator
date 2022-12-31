@@ -16,10 +16,10 @@ const CreateInvoice = () => {
             <h5 style={{ color: "#1e88e5", marginBottom: "15px" }}>
               Invoice Info
             </h5>
-            <div className="col-4">
+            <div className="col-6">
               <TextField label="Invoice Number" fullWidth />
             </div>
-            <div className="col-4">
+            <div className="col-6">
               <TextField
                 label="Invoice Date"
                 type={"date"}
