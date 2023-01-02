@@ -57,7 +57,9 @@ const Header = () => {
               >
                 <img
                   className="rounded-circle header-profile-user"
-                  src="assets/images/users/avatar-1.jpg"
+                  src={
+                    process.env.PUBLIC_URL + "/assets/images/users/avatar-1.jpg"
+                  }
                   alt="Header Avatar"
                 />
                 <span className="d-none d-xl-inline-block ms-1" key="t-henry">

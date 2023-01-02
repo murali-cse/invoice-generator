@@ -14,7 +14,7 @@ import CreateInvoice from './pages/invoices/CreateInvoice';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter  >
+    <BrowserRouter >
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<Dashboard />} />
